@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kshitiz Mishra — AI Agent & Web Developer | Nepal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Kshitiz Mishra — AI Agent Developer and Web Developer. Creator of Zynora AI and modern web solutions based in Nepal." />
+  <meta property="og:title" content="Kshitiz Mishra — AI Agent & Web Developer" />
+  <meta property="og:description" content="Building intelligent automation and modern web experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <main class="container" id="mainContainer">
+
+    <!-- Header / Hero -->
+    <header class="profile" role="banner">
+      <div class="profile-background" aria-hidden="true"></div>
+      <div class="profile-mesh" aria-hidden="true"></div>
+
+      <div class="avatar-wrapper">
+        <div class="avatar-ring" aria-hidden="true"></div>
+        <img
+          src="https://i.postimg.cc/XNsXRTrK/IMG-20260327-141114.jpg"
+          alt="Portrait of Kshitiz Mishra"
+          class="avatar"
+          loading="eager"
+          width="120"
+          height="120"
+        />
+        <div class="status-dot" aria-label="Available for work"></div>
+      </div>
+
+      <h1 class="title-gradient">Kshitiz Mishra</h1>
+
+      <div class="roles-row" aria-label="Roles">
+        <span class="role-pill">AI Agent Developer</span>
+        <span class="role-sep" aria-hidden="true"></span>
+        <span class="role-pill">Web Developer</span>
+        <span class="role-sep" aria-hidden="true"></span>
+        <span class="role-pill">Nepal</span>
+      </div>
+
+      <p class="tagline">
+        Building intelligent automation and modern web experiences.
+      </p>
+
+      <div class="hero-stats" aria-label="Key metrics">
+        <div class="stat-item">
+          <span class="stat-number" data-target="20">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Clients</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs" role="tablist" aria-label="Portfolio sections">
+      <button data-tab="about"    role="tab" aria-selected="true"  aria-controls="tab-content" class="active">About</button>
+      <button data-tab="services" role="tab" aria-selected="false" aria-controls="tab-content">Services</button>
+      <button data-tab="projects" role="tab" aria-selected="false" aria-controls="tab-content">Projects</button>
+      <button data-tab="stack"    role="tab" aria-selected="false" aria-controls="tab-content">Stack</button>
+      <button data-tab="contact"  role="tab" aria-selected="false" aria-controls="tab-content">Contact</button>
+      <div class="tab-indicator" id="tabIndicator" aria-hidden="true"></div>
+    </nav>
+
+    <!-- Tab Content -->
+    <section id="tab-content" role="tabpanel" aria-live="polite"></section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-inner">
+        <span class="footer-name">Kshitiz Mishra</span>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <span>&copy; <span id="year"></span> All rights reserved.</span>
+      </div>
+      <p class="footer-sub">Built with precision. Designed with intent.</p>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
