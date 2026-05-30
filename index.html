@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Kshitiz Mishra - Student Developer, AI Enthusiast, and Web Developer based in Nepal. Explore my portfolio, projects, and achievements.">
+    <meta name="theme-color" content="#050816">
+    <title>Kshitiz Mishra | Premium Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased bg-theme-dark text-theme-light overflow-x-hidden">
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-blur" class="cursor-blur"></div>
+
+    <div id="preloader" class="preloader">
+        <div class="loader-content">
+            <h2 class="welcome-text">Welcome to Website</h2>
+            <svg class="loader-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20 L40 50 L20 80 M80 20 L60 50 L80 80" stroke="url(#paint0_linear)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00f2ff" />
+                        <stop offset="1" stop-color="#7000ff" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="loading-text" id="loading-text">0%</div>
+        </div>
+    </div>
+
+    <canvas id="aurora-canvas" class="aurora-bg"></canvas>
+    <div class="noise-overlay"></div>
+
+    <header class="header glass-nav" id="header">
+        <div class="nav-container">
+            <a href="#home" class="brand-logo" aria-label="Home">
+                <span class="logo-text">KM.</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#expertise" class="nav-link">Expertise</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Work</a></li>
+                    <li class="nav-item"><a href="#timeline" class="nav-link">Journey</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-nav-container">
+            <ul class="mobile-nav-list">
+                <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link">About</a></li>
+                <li><a href="#expertise" class="mobile-nav-link">Expertise</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Work</a></li>
+                <li><a href="#timeline" class="mobile-nav-link">Journey</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <section id="home" class="hero-section section-padding">
+            <div class="container hero-container">
+                <div class="hero-content reveal-up">
+                    <div class="badge-wrapper">
+                        <span class="status-dot"></span>
+                        <span class="badge-text">Available for new opportunities</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="text-block">Designing the</span>
+                        <span class="text-gradient">Future</span>
+                        <span class="text-block">of Digital.</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Kshitiz Mishra &mdash; Student Developer & AI Enthusiast</h2>
+                    <p class="hero-description">
+                        Building scalable web applications, exploring intelligent systems, and creating seamless user experiences from Nepal to the world.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary btn-lg">Explore Work</a>
+                        <a href="#about" class="btn btn-secondary btn-lg btn-icon">
+                            About Me
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h4 class="stat-num">5+</h4>
+                            <p class="stat-label">Projects Completed</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <h4 class="stat-num">2+</h4>
+                            <p class="stat-label">Years Coding</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <h4 class="stat-num">100%</h4>
+                            <p class="stat-label">Commitment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+        </section>
+
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Behind the Code</h2>
+                    <p class="section-subtitle">Bridging logic and creativity to build impactful digital solutions.</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-image-wrapper reveal-right">
+                        <div class="image-circular-frame">
+                            <div class="frame-glow"></div>
+                            <div class="image-container">
+                                <img src="https://i.postimg.cc/XNsXRTrK/IMG-20260327-141114.jpg" alt="Kshitiz Mishra" class="profile-photo">
+                            </div>
+                            <div class="code-snippet-overlay">
+                                <pre><code>const dev = {
+    name: 'Kshitiz',
+    role: 'AI Agent Dev'
+};</code></pre>
+                            </div>
+                        </div>
+                        <div class="floating-element el-1">React</div>
+                        <div class="floating-element el-2">Python</div>
+                        <div class="floating-element el-3">Gemini API</div>
+                    </div>
+                    
+                    <div class="about-text-content reveal-left">
+                        <h3 class="about-heading">Transforming ideas into <span class="text-gradient">reality</span>.</h3>
+                        <p class="about-paragraph">
+                            I am a passionate student developer based in Nepal, deeply fascinated by the intersection of Artificial Intelligence and Web Development. My journey started with a simple curiosity about how the web works, which quickly evolved into a drive to build complex, scalable systems.
+                        </p>
+                        <p class="about-paragraph">
+                            Currently focusing on creating high-performance web applications and experimenting with machine learning models. I believe in clean code, user-centric design, and continuous learning.
+                        </p>
+                        <ul class="about-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Problem Solver at heart
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Detail-oriented architecture
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Agile methodology adapter
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Selected Works</h2>
+                    <p class="section-subtitle">A showcase of systems engineered for performance and scalability.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal-up" style="transition-delay: 100ms;">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">Machine Learning / IoT</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3 class="project-title">Earthquake Detection Network</h3>
+                            <p class="project-desc">A distributed IoT sensor network powered by edge-AI algorithms to detect and alert early seismic wave anomalies with millisecond latency.</p>
+                            <ul class="tech-stack">
+                                <li>Python</li>
+                                <li>TensorFlow</li>
+                                <li>C++</li>
+                                <li>WebSocket</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Case Study &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="mockup-glass">
+                                <div class="seismic-wave-anim"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal-up" style="transition-delay: 200ms;">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">Artificial Intelligence</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3 class="project-title">AI Assistant Platform</h3>
+                            <p class="project-desc">Next-generation conversational interface leveraging RAG architecture and LLMs for domain-specific enterprise knowledge retrieval.</p>
+                            <ul class="tech-stack">
+                                <li>Next.js</li>
+                                <li>LangChain</li>
+                                <li>Vector DB</li>
+                                <li>Tailwind</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Case Study &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="mockup-glass">
+                                <div class="ai-node-anim"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal-up" style="transition-delay: 300ms;">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">Web Development</span>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <h3 class="project-title">EdTech Ecosystem</h3>
+                            <p class="project-desc">Comprehensive learning management system featuring real-time collaboration, video streaming, and adaptive learning paths.</p>
+                            <ul class="tech-stack">
+                                <li>React</li>
+                                <li>Node.js</li>
+                                <li>PostgreSQL</li>
+                                <li>WebRTC</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Case Study &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="mockup-glass">
+                                <div class="dashboard-anim"></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-wrapper glass-panel reveal-up">
+                    <div class="contact-info">
+                        <h2 class="contact-title">Let's build something <span class="text-gradient">extraordinary</span> together.</h2>
+                        <p class="contact-desc">Open for professional opportunities, open-source collaborations, or strategic technical discussions.</p>
+                        
+                        <div class="contact-details-grid">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:kshitizmishra528@gmail.com" class="contact-value">kshitizmishra528@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Instagram</span>
+                                    <a href="https://instagram.com/kshitiz.god" target="_blank" rel="noopener noreferrer" class="contact-value">@kshitiz.god</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value">Nepal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-text">KM.</span>
+                    <p>Designing digital futures with precision and performance.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#projects">Work</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Socials</h4>
+                        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://instagram.com/kshitiz.god" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kshitiz Mishra. Built with pure HTML, CSS, and JS.</p>
+                <div class="footer-status">
+                    <span class="status-dot"></span> All systems operational
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
