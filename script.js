@@ -1,41 +1,48 @@
+document.documentElement.classList.add("js-enabled");
+
 document.addEventListener("DOMContentLoaded", () => {
-  /* --- 8-SECOND CINEMATIC LOADING ANIMATION --- */
+  /* --- SHORTENED CINEMATIC LOADING ANIMATION --- */
   const loaderOverlay = document.getElementById("loader-overlay");
   const loaderText = document.getElementById("loader-text");
 
-  // The 4 stages mapping to 0-8 seconds
+  const LOADER_DURATION = 4800;
+
+  // The 4 stages mapping to ~0-4.8 seconds
   const stages = [
     { text: "KSHITIZ MISHRA", time: 0 },
-    { text: "APP & WEB DEVELOPER", time: 2000 },
-    { text: "GENERATIVE AI SPECIALIST", time: 4000 },
-    { text: "WELCOME TO MY WEBSITE", time: 6000 }
+    { text: "APP & WEB DEVELOPER", time: 1200 },
+    { text: "GENERATIVE AI SPECIALIST", time: 2400 },
+    { text: "WELCOME TO MY WEBSITE", time: 3600 }
   ];
 
   stages.forEach((stage) => {
     setTimeout(() => {
-      if (loaderText) {
-        loaderText.classList.remove("active");
-        setTimeout(() => {
-          loaderText.textContent = stage.text;
-          loaderText.classList.add("active");
-        }, 400); // 400ms blur transition before text switch
-      }
+      if (!loaderText) return;
+      loaderText.classList.remove("active");
+      setTimeout(() => {
+        loaderText.textContent = stage.text;
+        loaderText.classList.add("active");
+      }, 250);
     }, stage.time);
   });
 
-  // End loader at exactly 8 seconds
+  // End loader at ~4.8 seconds
   setTimeout(() => {
-    if (loaderOverlay) {
-      loaderOverlay.style.opacity = '0';
-      setTimeout(() => {
-        loaderOverlay.classList.add("hidden");
-        document.body.style.overflow = "auto";
-      }, 1200);
+    if (!loaderOverlay) {
+      document.body.style.overflow = "";
+      return;
     }
-  }, 8000);
+    loaderOverlay.style.opacity = "0";
+    setTimeout(() => {
+      loaderOverlay.classList.add("hidden");
+      document.body.style.overflow = "";
+    }, 600);
+  }, LOADER_DURATION);
 
   // Prevent scrolling during loader animation
-  document.body.style.overflow = "hidden";
+  if (loaderOverlay) {
+    document.body.style.overflow = "hidden";
+  }
 
   /* --- NAVIGATION & MOBILE MENU --- */
   const navbar = document.getElementById("navbar");
@@ -88,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", revealOnScroll);
-  setTimeout(revealOnScroll, 8500); // Initial check after intro loader completes
+  setTimeout(revealOnScroll, LOADER_DURATION + 200); // Initial check after intro loader completes
 
   /* --- CONTACT FORM SUBMISSION HANDLER --- */
   const contactForm = document.getElementById("contact-form");
@@ -111,28 +118,37 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 5000);
     });
   }
-});
-
-/* --- CERTIFICATE LIGHTBOX FUNCTIONS --- */
-function openCertModal(imageSrc) {
   const lightbox = document.getElementById("cert-lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  if (lightboxImg) lightboxImg.src = imageSrc;
-  if (lightbox) lightbox.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
-}
 
-function closeCertModal() {
-  const lightbox = document.getElementById("cert-lightbox");
-  if (lightbox) lightbox.classList.add("hidden");
-  document.body.style.overflow = "auto";
-}
+  function closeCertModal() {
+    if (lightbox) {
+      lightbox.classList.add("hidden");
+    }
+    document.body.style.overflow = "";
+  }
 
-const certLightbox = document.getElementById('cert-lightbox');
-if (certLightbox) {
-  certLightbox.addEventListener('click', function(e) {
-    if (e.target === this) {
+  window.openCertModal = function openCertModal(imageSrc) {
+    if (!lightbox || !imageSrc) return;
+    const lightboxImg = document.getElementById("lightbox-img");
+    if (!lightboxImg) return;
+    lightboxImg.src = imageSrc;
+    lightbox.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeCertModal = closeCertModal;
+
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeCertModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox && !lightbox.classList.contains("hidden")) {
       closeCertModal();
     }
   });
-}
+});
